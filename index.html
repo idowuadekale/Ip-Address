@@ -3,65 +3,76 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
     <title>Frontend Mentor | IP Address Tracker</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/ip.jpg">
-    <!-- Main Style Sheet -->
-    <link rel="stylesheet" href="style.css">
-    <!-- Alternative Stylesheet -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="" />
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.1/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
+
+    <script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js" integrity="sha256-NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s=" crossorigin=""></script>
+
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 </head>
 
 <body>
+    <section class="bg"></section>
 
-    <main>
-        <!-- Search Section -->
-        <header>
-            <!-- <span class="link"> -->
-            <span class="pro">
-            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor.</a> Coded by <a href="https://idowublog.hashnode.dev/" target="_blank">Adekale Idowu Solomon.</a> <br>
-            <marquee>I'm a Software Engineer <a href="https://twitter.com/IdowuAdekale" target="_blank">My Twitter</a> || <a href="https://github.com/idowuadekale" target="_blank">Github</a> || <a href="https://www.linkedin.com/in/idowu-adekale/" target="_blank">Linkedin</a>                Pages</marquee>
-            </span>
-            <!-- </span> -->
-            <h1>IP Address Tracker</h1>
 
-            <section class="form-group">
-                <input type="text" placeholder="Search for any IP address or domain" id="user-input" />
-                <button id="button">
-      <img src="images/icon-arrow.svg" alt="Arrow Icon">
-    </button>
-            </section>
+    <h1>IP Address Tracker</h1>
 
-            <!-- Client Details Display Section -->
+    <form class="form__container">
 
-            <section>
-                <div>
-                    <h2>IP ADDRESS</h2>
-                    <p id="ip-address">192.212.174.101</p>
-                </div>
-                <div>
-                    <h2>LOCATION</h2>
-                    <p id="location">Brookyln, NY 10001</p>
-                </div>
-                <div>
-                    <h2>TIMEZONE</h2>
-                    <p id="timezone">UTC -05:00</p>
-                </div>
-                <div>
-                    <h2>ISP</h2>
-                    <p id="isp">SpaceX Starlink</p>
-                </div>
-            </section>
-        </header>
+        <input type="text" class="input__text" placeholder="Search for any IP adress or domain">
+        <button class="input__button" onclick="searchGeoLocation()">></button>
 
-        <!-- Map Display Section -->
-        <section id="map" class="map-display"></section>
-    </main>
+    </form>
 
-    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
-    <script src="main.js"></script>
+    <section class="datas__container">
+        <div class="data__container">
+            <h2 class="data__card">IP ADRESS:
+                <p id="ip"></p>
+            </h2>
+
+            <hr class="solid">
+
+            <h2 class="data__card">LOCATION:
+                <p id="location"></p>
+            </h2>
+
+            <hr class="solid">
+
+            <h2 class="data__card">TIMEZONE:
+                <p id="timezone"></p>
+            </h2>
+
+            <hr class="solid">
+
+            <h2 class="data__card">ISP:
+                <p id="isp"></p>
+            </h2>
+        </div>
+    </section>
+
+    <section id="map"></section>
+
+    <footer class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener noreferrer">Frontend Mentor</a>. Coded by <a href="https://web-jku6.vercel.app" target="_blank" rel="noopener noreferrer">Adekale Idowu</a>.
+    </footer>
+
+    <script src="./js/index.js"></script>
 </body>
 
 </html>
